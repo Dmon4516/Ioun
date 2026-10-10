@@ -1,0 +1,2 @@
+ALTER TABLE documents
+ADD COLUMN view_json TEXT NOT NULL DEFAULT '{}';

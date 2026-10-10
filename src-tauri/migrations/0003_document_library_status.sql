@@ -1,0 +1,2 @@
+ALTER TABLE documents
+ADD COLUMN in_library INTEGER NOT NULL DEFAULT 1;
