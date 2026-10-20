@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lyra Viewer</title>
+    <script>
+      // Evita el destello de tema antes de que se hidraten los ajustes. La clave
+      // la mantiene `applyAppearance()` en src/lib/stores/settings.svelte.ts.
+      try {
+        const saved = localStorage.getItem("lyra-theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch {
+        // Sin localStorage se queda el tema por defecto del <html>.
+      }
+    </script>
+  </head>
+  <body data-paths-mode="expand">
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

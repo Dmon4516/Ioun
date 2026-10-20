@@ -1,0 +1,90 @@
+/* Lyra Viewer — design tokens */
+
+:root {
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+
+  --radius-card: 12px;
+  --radius-button: 10px;
+  --radius-panel: 14px;
+  --radius-bar: 14px;
+
+  --gap-edge: 10px;
+  --gap-panel: 10px;
+
+  --sidebar-width: min(302px, 82vw);
+  --inspector-width: min(324px, 86vw);
+  --inspector-outline-width: min(480px, 90vw);
+
+  --animation-fast: 140ms ease-out;
+  --animation-normal: 200ms ease-out;
+
+  --page-base-width: 760px;
+  --page-base-height: 1000px;
+
+  /* Hueco que el área del documento reserva para la barra de título cuando está
+     visible de forma estable: el revelado con el puntero no desplaza el PDF. */
+  --titlebar-offset: 64px;
+  /* Franja que los paneles laterales dejan libre mientras el título está a la
+     vista: suben cuando se oculta y se encogen al aparecer. */
+  --titlebar-reserve: 64px;
+  /* Hueco reservado a la izquierda de la barra de título para el semáforo de macOS. */
+  --titlebar-traffic-slot: 0px;
+  /* Altura mínima de la barra de título (en macOS deja sitio al semáforo). */
+  --titlebar-min-height: 0px;
+  /* Espacio de la barra principal en columna junto a la barra de archivos. */
+  --rail-width: 0px;
+  --inspector-top: var(--gap-edge);
+
+  --sb-size: 12px;
+  --icon-color: var(--text-secondary);
+}
+
+@media (max-width: 920px) {
+  :root {
+    --rail-width: 72px;
+  }
+}
+
+:root[data-platform="macos"] {
+  --titlebar-traffic-slot: 68px;
+  --titlebar-min-height: 48px;
+}
+
+/* En pantalla completa macOS oculta el semáforo: el título ocupa su hueco. */
+:root[data-platform="macos"][data-fullscreen="true"] {
+  --titlebar-traffic-slot: 0px;
+}
+
+:root[data-theme="light"] {
+  --bg-app: #e9ebef; --bg-titlebar: rgba(255,255,255,0.78);
+  --bg-sidebar: rgba(255,255,255,0.80); --bg-card: rgba(255,255,255,0.84); --bg-active: rgba(10,132,255,0.09);
+  --bg-content: #dfe3e8; --bg-menu: rgba(255,255,255,0.96); --bg-toolbar: rgba(255,255,255,0.88);
+  --bg-input: rgba(255,255,255,0.86); --bg-button: rgba(0,0,0,0.045); --border: rgba(20,24,29,0.09);
+  --text-primary: #181b20; --text-secondary: #656d78; --accent: #0a84ff; --danger: #d70015;
+  --state-active: var(--accent);
+  --state-idle: color-mix(in srgb, var(--text-secondary) 72%, transparent);
+  --state-hibernated: #9a7bff; --state-restoring: #ffb340;
+  --shadow: 0 12px 32px rgba(20,25,35,0.12); --shadow-lg: 0 24px 70px rgba(20,25,35,0.22);
+  --shadow-page: 0 18px 44px rgba(24,29,39,0.16); --overlay: rgba(20,24,32,0.24);
+  --scrollbar-thumb: rgba(24,28,35,0.26); --scrollbar-thumb-hover: rgba(24,28,35,0.42);
+  --opaque-panel: #f6f7f9; --opaque-sidebar: #f3f4f6; --opaque-content: #e2e5ea;
+}
+
+:root[data-theme="dark"] {
+  --bg-app: #101216; --bg-titlebar: rgba(24,26,32,0.82);
+  --bg-sidebar: rgba(21,23,28,0.82); --bg-card: rgba(35,38,46,0.72); --bg-active: rgba(100,210,255,0.10);
+  --bg-content: #0c0e12; --bg-menu: rgba(26,29,35,0.96); --bg-toolbar: rgba(25,28,34,0.86);
+  --bg-input: rgba(255,255,255,0.055); --bg-button: rgba(255,255,255,0.055); --border: rgba(255,255,255,0.085);
+  --text-primary: #f3f5f8; --text-secondary: #99a1ad; --accent: #64d2ff; --danger: #ff453a;
+  --state-active: var(--accent);
+  --state-idle: color-mix(in srgb, var(--text-secondary) 72%, transparent);
+  --state-hibernated: #9a7bff; --state-restoring: #ffb340;
+  --shadow: 0 12px 30px rgba(0,0,0,0.28); --shadow-lg: 0 24px 70px rgba(0,0,0,0.42);
+  --shadow-page: 0 20px 48px rgba(0,0,0,0.36); --overlay: rgba(0,0,0,0.42);
+  --scrollbar-thumb: rgba(255,255,255,0.20); --scrollbar-thumb-hover: rgba(255,255,255,0.34);
+  --opaque-panel: #1a1d23; --opaque-sidebar: #16181d; --opaque-content: #0d0f13;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
