@@ -11,25 +11,6 @@ la posición de lectura en el equipo del usuario.
 > evolucionando; consulta [TECH_DEBT.md](TECH_DEBT.md) para conocer el trabajo
 > pendiente.
 
-## Capturas
-
-### Biblioteca y visor
-
-![Biblioteca vacía y controles del visor](docs/screenshots/frontend-empty-state.png)
-
-La vista principal combina la biblioteca lateral, la barra de herramientas del
-visor, navegación de páginas y controles de zoom. En una instalación de
-escritorio, los archivos y carpetas se seleccionan mediante los diálogos nativos
-de Tauri.
-
-### Configuración
-
-![Panel de configuración](docs/screenshots/settings.png)
-
-La configuración permite controlar la posición de lectura, la visibilidad de
-rutas, el indicador de página, el comportamiento de títulos largos, el tema y
-otras preferencias de lectura.
-
 ## Funcionalidades
 
 - Biblioteca persistente de documentos, carpetas, categorías y papelera en SQLite.
