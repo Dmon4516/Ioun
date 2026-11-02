@@ -134,26 +134,6 @@ Los artefactos generados aparecen bajo `src-tauri/target/` y no forman parte
 del repositorio. Si se elimina esa carpeta, Cargo y Tauri la regeneran en la
 siguiente compilación.
 
-## Preparar el proyecto para compartir
-
-Para crear un ZIP con el código fuente y los archivos de configuración importantes:
-
-```bash
-npm run package:llm
-```
-
-Por defecto, crea `../lyra-viewer-llm.zip`. También puedes indicar otra ruta:
-
-```bash
-npm run package:llm -- /ruta/al/proyecto.zip
-```
-
-El ZIP omite dependencias instaladas, compilaciones, archivos generados y archivos
-de entorno locales (`node_modules`, `dist`, `src-tauri/target`, `src-tauri/gen`,
-`coverage`, `.env` y `.DS_Store`). Usa el `zip` del
-sistema —está en macOS y Linux; en Windows, Git Bash o WSL— y no sobrescribe un ZIP
-existente: si ya hay uno en la ruta, lo dice y no toca nada.
-
 ## Build
 
 ```bash

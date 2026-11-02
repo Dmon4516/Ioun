@@ -20,7 +20,6 @@
     "typecheck": "tsc --noEmit",
     "validate": "npm run typecheck && npm run check && npm run lint && npm test && npm run build",
     "format": "prettier --write .",
-    "package:llm": "node scripts/package-for-llm.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {
