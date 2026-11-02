@@ -259,19 +259,6 @@ Orden recomendado:
 6. Añadir anotaciones comunes, EPUB avanzado y exportación.
 7. Completar robustez, accesibilidad, distribución y criterios de `v1.0.0`.
 
-## Fuera de alcance por ahora
-
-- ⏸️ API REST: Ioun mantiene una arquitectura local basada en Tauri e IPC.
-- ⏸️ Sincronización entre dispositivos: requiere otro modelo de identidad,
-  conflictos y privacidad.
-- ⏸️ Editor de bloques estilo Notion: el editor seguirá centrado en Markdown.
-- ⏸️ Conversión general de formatos al estilo Calibre.
-- ⏸️ Undo global de acciones de la aplicación como borrar, mover o categorizar;
-  la papelera y la resolución de conflictos cubren esas operaciones. El undo
-  del editor es una función independiente y sí está planificado para `v0.3.0`.
-- ⏸️ Localización completa antes de `v0.4.0`; primero se prioriza una interfaz
-  coherente en el idioma base.
-
 ## Arquitectura
 
 ```text
