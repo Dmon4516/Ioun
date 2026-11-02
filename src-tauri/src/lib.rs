@@ -80,7 +80,7 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_window_state::Builder::default().build())
-        .register_asynchronous_uri_scheme_protocol("lyra-pdf", |_app, request, responder| {
+        .register_asynchronous_uri_scheme_protocol("ioun-pdf", |_app, request, responder| {
             tauri::async_runtime::spawn(async move {
                 responder.respond(pdf_protocol::handle(request).await);
             });
@@ -105,7 +105,7 @@ pub fn run() {
                 match db::init(&handle).await {
                     Ok(()) => {
                         if let Err(error) = fs_watcher::start(handle.clone()).await {
-                            eprintln!("[lyra] No se pudo iniciar la vigilancia de archivos: {error}");
+                            eprintln!("[ioun] No se pudo iniciar la vigilancia de archivos: {error}");
                             let _ = handle.emit(
                                 "watcher-init-failed",
                                 format!("La vigilancia de archivos no pudo iniciarse: {error}"),
@@ -120,7 +120,7 @@ pub fn run() {
                                 interval.tick().await;
                                 if let Err(error) = fs_watcher::refresh().await {
                                     eprintln!(
-                                        "[lyra] No se pudieron actualizar las rutas vigiladas: {error}"
+                                        "[ioun] No se pudieron actualizar las rutas vigiladas: {error}"
                                     );
                                 }
                                 match commands::library::sync_synced_folders_throttled(&sync_handle).await
@@ -128,20 +128,20 @@ pub fn run() {
                                     Ok(true) => {
                                         if let Err(error) = sync_handle.emit("library-changed", ()) {
                                             eprintln!(
-                                                "[lyra] No se notificó la biblioteca sincronizada: {error}"
+                                                "[ioun] No se notificó la biblioteca sincronizada: {error}"
                                             );
                                         }
                                     }
                                     Ok(false) => {}
                                     Err(error) => {
-                                        eprintln!("[lyra] Error al sincronizar carpetas: {error}")
+                                        eprintln!("[ioun] Error al sincronizar carpetas: {error}")
                                     }
                                 }
                             }
                         });
                     }
                     Err(e) => {
-                        eprintln!("[lyra] db init error: {e}");
+                        eprintln!("[ioun] db init error: {e}");
                         // Notificar al frontend para que muestre un estado degradado.
                         // No arrancamos el watcher ni el poll: sin BD todo fallaría.
                         let _ = handle.emit("db-init-failed", e.to_string());

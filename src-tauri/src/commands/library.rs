@@ -3462,7 +3462,7 @@ pub async fn export_library_to_file(app: tauri::AppHandle) -> Result<Option<Stri
         app.dialog()
             .file()
             .set_title("Exportar biblioteca")
-            .set_file_name("lyra-library.json")
+            .set_file_name("ioun-library.json")
             .add_filter("JSON", &["json"])
             .blocking_save_file()
     })
@@ -3632,7 +3632,7 @@ mod add_folder_tests {
         let pool = test_pool().await;
 
         let tmp = std::env::temp_dir().join(format!(
-            "lyra-ignore-scope-{}",
+            "ioun-ignore-scope-{}",
             uuid::Uuid::new_v4().simple()
         ));
         let root = tmp.join("lib");
@@ -3702,7 +3702,7 @@ mod add_file_tests {
     async fn refreshing_a_zero_page_document_preserves_the_last_page() {
         let pool = test_pool().await;
         let path = std::env::temp_dir().join(format!(
-            "lyra-add-file-{}.pdf",
+            "ioun-add-file-{}.pdf",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::write(&path, b"%PDF-1.4 test").unwrap();
@@ -4114,7 +4114,7 @@ mod rename_tests {
         let pool = test_pool().await;
 
         let tmp = std::env::temp_dir().join(format!(
-            "lyra-rename-test-{}",
+            "ioun-rename-test-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::create_dir_all(&tmp).unwrap();
@@ -4174,7 +4174,7 @@ mod rename_tests {
         let pool = test_pool().await;
 
         let tmp = std::env::temp_dir().join(format!(
-            "lyra-rename-subtree-{}",
+            "ioun-rename-subtree-{}",
             uuid::Uuid::new_v4().simple()
         ));
         let old_path = tmp.join("lib");
@@ -4297,7 +4297,7 @@ mod rename_tests {
         let pool = test_pool().await;
 
         let tmp = std::env::temp_dir().join(format!(
-            "lyra-rename-test-{}",
+            "ioun-rename-test-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::create_dir_all(&tmp).unwrap();
@@ -4331,7 +4331,7 @@ mod rename_tests {
     async fn rename_collision_merges_folder_links_without_unique_violation() {
         let pool = test_pool().await;
         let tmp = std::env::temp_dir().join(format!(
-            "lyra-rename-links-{}",
+            "ioun-rename-links-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::create_dir_all(&tmp).unwrap();
@@ -4564,7 +4564,7 @@ mod sync_tests {
     impl SyncedTree {
         async fn new(name: &str) -> Self {
             let dir = std::env::temp_dir().join(format!(
-                "lyra-sync-{name}-{}",
+                "ioun-sync-{name}-{}",
                 uuid::Uuid::new_v4().simple()
             ));
             std::fs::create_dir_all(&dir).unwrap();
@@ -4715,7 +4715,7 @@ mod sync_tests {
 
         // …no se indexa si el pase acotado recibe solo rutas ajenas a la raíz.
         let unrelated =
-            std::env::temp_dir().join(format!("lyra-unrelated-{}", uuid::Uuid::new_v4().simple()));
+            std::env::temp_dir().join(format!("ioun-unrelated-{}", uuid::Uuid::new_v4().simple()));
         std::fs::create_dir_all(&unrelated).unwrap();
         assert!(
             !sync_roots_containing(&tree.pool, None, std::slice::from_ref(&unrelated))

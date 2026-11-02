@@ -80,7 +80,7 @@ function restoreRangeMock(): void {
 }
 
 beforeAll(() => {
-  dir = mkdtempSync(path.join(tmpdir(), "lyra-range-"));
+  dir = mkdtempSync(path.join(tmpdir(), "ioun-range-"));
   pdfPath = path.join(dir, "grande.pdf");
   // 300 KB de relleno: el archivo es mucho mayor que el bloque que pide pdf.js,
   // que es justo lo que hace útil el transporte por rangos.
@@ -102,7 +102,7 @@ afterAll(() => {
   rmSync(dir, { recursive: true, force: true });
 });
 
-describe("LyraRangeTransport", () => {
+describe("IounRangeTransport", () => {
   it("pide rangos en vez del archivo entero y pdf.js lo parsea", async () => {
     requests = [];
     const transport = createRangeTransport(PDFDataRangeTransport, pdfPath, pdfBytes.length);

@@ -20,7 +20,7 @@ vi.mock("pdfjs-dist", () => ({
 }));
 
 vi.mock("@tauri-apps/api/core", () => ({
-  convertFileSrc: (path: string) => `lyra-pdf://${path}`,
+  convertFileSrc: (path: string) => `ioun-pdf://${path}`,
 }));
 
 // El mock local de `@tauri-apps/api/core` sustituye el global (que sí trae
@@ -129,7 +129,7 @@ describe("origen del documento", () => {
 
     const source = getDocument.mock.calls.at(-1)?.[0] as { url?: string; range?: unknown };
     expect(source.range).toBeUndefined();
-    expect(source.url).toBe("lyra-pdf:///libros/ajeno.pdf");
+    expect(source.url).toBe("ioun-pdf:///libros/ajeno.pdf");
   });
 });
 

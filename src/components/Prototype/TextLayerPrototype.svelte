@@ -4,7 +4,7 @@
   //   ?pdf=<url>          archivo servido por HTTP (sirve en un navegador;
   //                       en la app, con el PDF en `public/`)
   //   ?local=<ruta>       ruta absoluta del disco cargada con el cargador de
-  //                       la app (protocolo `lyra-pdf`); solo dentro de la app
+  //                       la app (protocolo `ioun-pdf`); solo dentro de la app
   // Y opcionalmente:
   //   &page=<n>           página a medir (por defecto 1)
   //   &scale=<n>          escala (por defecto 1.5)
@@ -64,7 +64,7 @@
 
   async function loadPdf(path: string, useAppLoader: boolean): Promise<PDFDocumentProxy> {
     if (useAppLoader) {
-      // Camino real de la app: mide también el protocolo `lyra-pdf`.
+      // Camino real de la app: mide también el protocolo `ioun-pdf`.
       usedAppLoader = true;
       return openDocument(DOC_ID, path);
     }
@@ -159,7 +159,7 @@
       <tbody>
         <tr><td>pdfjs-dist</td><td>{pdfjsVersion}</td></tr>
         <tr><td>Página / escala</td><td>{metrics.page} / {metrics.scale}</td></tr>
-        <tr><td>Carga</td><td>{usedAppLoader ? "cargador de la app (lyra-pdf)" : "pdf.js directo (fetch)"}</td></tr>
+        <tr><td>Carga</td><td>{usedAppLoader ? "cargador de la app (ioun-pdf)" : "pdf.js directo (fetch)"}</td></tr>
         <tr><td>PDF load</td><td>{metrics.pdfLoadMs.toFixed(1)} ms</td></tr>
         <tr><td>Canvas render</td><td>{metrics.canvasRenderMs.toFixed(1)} ms</td></tr>
         <tr><td>TextLayer build</td><td>{metrics.textLayerMs.toFixed(1)} ms</td></tr>

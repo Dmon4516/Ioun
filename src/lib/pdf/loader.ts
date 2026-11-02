@@ -80,7 +80,7 @@ function evictIfNeeded(): void {
 /**
  * Cómo pedir el PDF a pdf.js.
  *
- * Con el esquema propio (`lyra-pdf://`) pdf.js no usa `Range` y se trae el
+ * Con el esquema propio (`ioun-pdf://`) pdf.js no usa `Range` y se trae el
  * archivo entero, así que se prefiere el transporte por rangos sobre el disco.
  * Si no se puede conocer la longitud (por ejemplo si el documento ya no está
  * registrado), se cae a la URL del protocolo, que sigue funcionando aunque
@@ -100,7 +100,7 @@ async function documentSource(
   } catch (error) {
     console.error(`[pdf] Sin lectura por rangos para ${path}; se sirve por protocolo`, error);
   }
-  return { url: convertFileSrc(path, "lyra-pdf") };
+  return { url: convertFileSrc(path, "ioun-pdf") };
 }
 
 /**

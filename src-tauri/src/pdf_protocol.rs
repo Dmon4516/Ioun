@@ -52,7 +52,7 @@ fn cap_range((start, end): (u64, u64)) -> (u64, u64) {
     )
 }
 
-/// El webview pide `lyra-pdf://` desde otro origen (el de la página), así que
+/// El webview pide `ioun-pdf://` desde otro origen (el de la página), así que
 /// la respuesta necesita CORS: sin `Access-Control-Allow-Origin` el XHR falla
 /// con status 0 y pdf.js no puede abrir el documento.
 fn add_cors_headers(headers: &mut HeaderMap) {
@@ -305,7 +305,7 @@ mod tests {
         },
     };
 
-    /// Sin CORS, el XHR del webview a `lyra-pdf://` falla con status 0 y pdf.js
+    /// Sin CORS, el XHR del webview a `ioun-pdf://` falla con status 0 y pdf.js
     /// no abre ningún documento. Esta prueba existe porque ya se rompió una vez.
     #[test]
     fn responses_carry_cors_headers() {
@@ -335,7 +335,7 @@ mod tests {
     async fn options_request_is_answered_with_cors() {
         let request = Request::builder()
             .method(Method::OPTIONS)
-            .uri("lyra-pdf://localhost/%2Ftmp%2Fbook.pdf")
+            .uri("ioun-pdf://localhost/%2Ftmp%2Fbook.pdf")
             .body(Vec::new())
             .expect("request");
         let response = handle(request).await;
@@ -391,7 +391,7 @@ mod tests {
         contents: &[u8],
     ) -> std::path::PathBuf {
         let path = std::env::temp_dir().join(format!(
-            "lyra-protocol-{name}-{}",
+            "ioun-protocol-{name}-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::write(&path, contents).unwrap();
@@ -424,7 +424,7 @@ mod tests {
             .replace(' ', "%20");
         let mut builder = Request::builder()
             .method(method)
-            .uri(format!("lyra-pdf://localhost/{encoded}"));
+            .uri(format!("ioun-pdf://localhost/{encoded}"));
         if let Some(range) = range {
             builder = builder.header(RANGE, range);
         }
@@ -438,7 +438,7 @@ mod tests {
     async fn refuses_a_file_that_is_not_registered() {
         let pool = crate::db::test_pool().await;
         let path = std::env::temp_dir().join(format!(
-            "lyra-protocol-unregistered-{}",
+            "ioun-protocol-unregistered-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::write(&path, b"secreto").unwrap();
@@ -471,7 +471,7 @@ mod tests {
     async fn path_traversal_does_not_escape_the_registered_path() {
         let pool = crate::db::test_pool().await;
         let dir = std::env::temp_dir().join(format!(
-            "lyra-protocol-traversal-{}",
+            "ioun-protocol-traversal-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::create_dir_all(dir.join("sub")).unwrap();
@@ -565,7 +565,7 @@ mod tests {
             .await
             .unwrap();
         let big = std::env::temp_dir().join(format!(
-            "lyra-protocol-grande-{}",
+            "ioun-protocol-grande-{}",
             uuid::Uuid::new_v4().simple()
         ));
         let file = std::fs::File::create(&big).unwrap();

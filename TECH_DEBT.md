@@ -179,7 +179,7 @@ reciente) y pedir confirmación antes de descartar el resto.
 
 ### El fallback sin longitud servía el PDF completo sin tope
 **Ubicación:** `src/lib/pdf/loader.ts` (`documentSource`), `src-tauri/src/pdf_protocol.rs`.
-**Situación:** con el esquema propio (`lyra-pdf://`) pdf.js no añade la cabecera
+**Situación:** con el esquema propio (`ioun-pdf://`) pdf.js no añade la cabecera
 `Range`, así que el camino de reserva pedía el archivo entero y el protocolo lo
 materializaba en memoria. La guarda de 413 que había antes desapareció al introducir
 el transporte por rangos, y no quedó ningún tope.
@@ -355,7 +355,7 @@ Es el único modal que no escuchaba `Escape` (solo el botón X y el overlay). A�
 manejador global, delante de los demás.
 
 
-### El protocolo `lyra-pdf://` no tenía pruebas de la comprobación de acceso
+### El protocolo `ioun-pdf://` no tenía pruebas de la comprobación de acceso
 Servía archivos por ruta y lo único que impide leer cualquier archivo del disco es la
 coincidencia exacta contra `documents`, que **no estaba cubierta por ninguna prueba**.
 `handle` se separa en `handle` (resuelve el pool) y `handle_with_pool` (el resto),
@@ -484,7 +484,7 @@ otro sitio (esa prueba falla si se quita la comprobación nueva).
 
 ### Los PDF grandes se cargan enteros en memoria
 pdf.js solo añade la cabecera `Range` cuando la URL es `http(s)` (`isHttp` en su
-`NetworkManager`), así que con el esquema propio `lyra-pdf://` pedía siempre el
+`NetworkManager`), así que con el esquema propio `ioun-pdf://` pedía siempre el
 archivo completo: un PDF de 300 MB se materializaba entero en Rust y en el
 webview. Ahora el visor usa un **transporte por rangos**
 (`src/lib/pdf/rangeTransport.ts`) sobre dos órdenes nuevas: `pdf_file_length`

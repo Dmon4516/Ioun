@@ -1,9 +1,9 @@
-# Reign
+# Ioun
 
-![Reign: estado inicial](docs/screenshots/frontend-empty-state.png)
+![Ioun: estado inicial](docs/screenshots/frontend-empty-state.png)
 
 Lector de documentos de escritorio ligero y privado, construido con **Svelte 5**,
-**Tauri 2**, **Rust**, **SQLite** y **pdf.js**. Reign organiza documentos locales
+**Tauri 2**, **Rust**, **SQLite** y **pdf.js**. Ioun organiza documentos locales
 sin subirlos a un servicio externo y mantiene la biblioteca, las preferencias y
 la posición de lectura en el equipo del usuario.
 
@@ -24,7 +24,7 @@ la posición de lectura en el equipo del usuario.
 - Detección de movimientos externos mediante identidad de archivo
   (`device_id` + `inode`) para evitar duplicados al mover documentos.
 - Organización por categorías, documentos recientes y posiciones persistentes.
-- Eliminación opcional del contenido desde Reign conservando el archivo original
+- Eliminación opcional del contenido desde Ioun conservando el archivo original
   según la acción elegida.
 - Interfaz adaptable con modo oscuro, barra de título integrada en macOS y
   controles de lectura configurables.
@@ -73,9 +73,9 @@ estén terminadas.
   rollback y recuperación ante errores.
 - ⬜ Añadir pruebas N-1 y N-2 que actualicen bases de datos de versiones
   anteriores y verifiquen su integridad.
-- ⬜ Definir un sistema de errores tipado (`ReignError`) para distinguir base de
+- ⬜ Definir un sistema de errores tipado (`IounError`) para distinguir base de
   datos, IO, validación, sincronización, ausencia y conflictos.
-- ⬜ Migrar gradualmente los comandos Rust a `Result<T, ReignError>` y conservar
+- ⬜ Migrar gradualmente los comandos Rust a `Result<T, IounError>` y conservar
   una variante de compatibilidad durante la transición.
 - ⬜ Centralizar en frontend el análisis de errores del backend y mostrar
   mensajes accionables.
@@ -107,7 +107,7 @@ estén terminadas.
 - ⬜ Normalizar rutas sensibles a mayúsculas y minúsculas según el volumen.
 - ⬜ Correlacionar eventos `unlink` y `add` cuando no exista un rename único.
 - ⬜ Añadir debounce configurable para ráfagas del sistema de archivos.
-- ⬜ Evitar que los eventos generados por Reign se procesen como cambios externos.
+- ⬜ Evitar que los eventos generados por Ioun se procesen como cambios externos.
 - ⬜ Hacer que el escaneo periódico use upsert por identidad.
 - ⬜ Añadir reintentos para archivos bloqueados o temporalmente inaccesibles.
 - ⬜ Mantener una lista de documentos desaparecidos para facilitar su recuperación.
@@ -117,7 +117,7 @@ estén terminadas.
 
 - 🔄 Refinar estados de carga, sincronización, errores y documentos ausentes.
 - ⬜ Mejorar la resolución de conflictos cuando un archivo cambia mientras está abierto.
-- ⬜ Filtrar las escrituras y renombrados originados por Reign para no
+- ⬜ Filtrar las escrituras y renombrados originados por Ioun para no
   interpretarlos como cambios externos.
 - ⬜ Mostrar progreso por carpeta y cancelar sin dejar estados parciales.
 - ⬜ Añadir indicadores para documentos activos, hibernados, modificados y ausentes.
@@ -242,7 +242,7 @@ dependencias, no son fechas de publicación:
 | Versión | Estimación | Objetivo |
 | --- | --- | --- |
 | `v0.1.0` | Completada | Base funcional |
-| `v0.2.0` | 2–3 semanas | Estabilización, `ReignError`, migraciones y `FormatModule` |
+| `v0.2.0` | 2–3 semanas | Estabilización, `IounError`, migraciones y `FormatModule` |
 | `v0.3.0` | 6–9 semanas | EPUB, editor Markdown y anotaciones unificadas |
 | `v0.4.0` | 3–4 semanas | UX, localización y accesibilidad |
 | `v0.5.0` | 2 semanas | Distribución, privacidad y documentación |
@@ -261,7 +261,7 @@ Orden recomendado:
 
 ## Fuera de alcance por ahora
 
-- ⏸️ API REST: Reign mantiene una arquitectura local basada en Tauri e IPC.
+- ⏸️ API REST: Ioun mantiene una arquitectura local basada en Tauri e IPC.
 - ⏸️ Sincronización entre dispositivos: requiere otro modelo de identidad,
   conflictos y privacidad.
 - ⏸️ Editor de bloques estilo Notion: el editor seguirá centrado en Markdown.

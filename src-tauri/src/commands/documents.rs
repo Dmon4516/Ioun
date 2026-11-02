@@ -287,7 +287,7 @@ mod range_tests {
 
     fn temp_file(name: &str, content: &[u8]) -> std::path::PathBuf {
         let path = std::env::temp_dir().join(format!(
-            "lyra-range-{name}-{}",
+            "ioun-range-{name}-{}",
             uuid::Uuid::new_v4().simple()
         ));
         std::fs::write(&path, content).unwrap();

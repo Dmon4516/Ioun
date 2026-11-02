@@ -9,7 +9,7 @@ export async function handleCloseRequested(
   flushPendingProgress: () => Promise<unknown>,
   destroy: () => Promise<unknown>,
   reportError: (error: unknown) => void = (error) => {
-    console.error("[lyra] No se pudo completar el flush al cerrar", error);
+    console.error("[ioun] No se pudo completar el flush al cerrar", error);
   },
 ): Promise<void> {
   if (!flushOnClose) return;

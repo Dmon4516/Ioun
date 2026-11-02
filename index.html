@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reign</title>
+    <title>Ioun</title>
     <script>
       // Evita el destello de tema antes de que se hidraten los ajustes. La clave
       // la mantiene `applyAppearance()` en src/lib/stores/settings.svelte.ts.
       try {
-        const saved = localStorage.getItem("lyra-theme");
+        const saved = localStorage.getItem("ioun-theme");
         if (saved === "light" || saved === "dark") {
           document.documentElement.dataset.theme = saved;
         }

@@ -72,7 +72,7 @@ export function applyAppearance(): void {
     // Espejo del tema para el script inline de `index.html`, que lo aplica antes
     // del primer pintado. La clave está duplicada allí a propósito: ese script
     // no puede importar nada.
-    localStorage.setItem("lyra-theme", theme);
+    localStorage.setItem("ioun-theme", theme);
   } catch {
     // Sin localStorage el tema se aplica igual, solo se pierde el anti-FOUC.
   }

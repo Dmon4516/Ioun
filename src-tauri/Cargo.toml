@@ -1,13 +1,13 @@
 [package]
-name = "reign"
+name = "ioun"
 version = "0.1.0"
-description = "Reign — document reader"
+description = "Ioun — document reader"
 authors = ["David Montenegro"]
 edition = "2024"
 rust-version = "1.90"
 
 [lib]
-name = "reign_lib"
+name = "ioun_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

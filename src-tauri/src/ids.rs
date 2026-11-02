@@ -1,4 +1,4 @@
-//! Generación centralizada de IDs para Reign.
+//! Generación centralizada de IDs para Ioun.
 //!
 //! Formato: `{prefix}-{32 hex chars}` (UUID v4 sin guiones).
 //!

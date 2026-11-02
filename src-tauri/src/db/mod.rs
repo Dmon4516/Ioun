@@ -12,7 +12,7 @@ static POOL: tokio::sync::OnceCell<SqlitePool> = tokio::sync::OnceCell::const_ne
 pub async fn init(app: &AppHandle) -> Result<()> {
     let dir = app.path().app_data_dir()?;
     std::fs::create_dir_all(&dir)?;
-    let db_path = dir.join("lyra.db");
+    let db_path = dir.join("ioun.db");
     let url = format!("sqlite://{}", db_path.display());
 
     let pool = SqlitePoolOptions::new()

@@ -14,7 +14,7 @@
   const activeTab = $derived(getActiveTab());
   const doc = $derived(activeTab ? documents.items.get(activeTab.docId) ?? null : null);
 
-  const title = $derived(doc ? displayTitle(doc.title, settings.showExtensions) : "Reign");
+  const title = $derived(doc ? displayTitle(doc.title, settings.showExtensions) : "Ioun");
   const path = $derived(doc ? doc.path : "");
   const displayPath = $derived(pathSummary(path, settings.pathDepth));
 

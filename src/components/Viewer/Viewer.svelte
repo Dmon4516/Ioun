@@ -18,7 +18,7 @@
     <div class="empty-state">
       {#if doc}
         <h2>Formato no compatible</h2>
-        <p>Reign todavía no tiene un visor para este tipo de documento.</p>
+        <p>Ioun todavía no tiene un visor para este tipo de documento.</p>
       {:else}
         <h2>Ninguna pestaña activa</h2>
         <p>Abre un documento desde la barra de documentos o usa la búsqueda.</p>

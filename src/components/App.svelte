@@ -473,7 +473,7 @@
         else unlistenDb = fn;
       })
       .catch((error: unknown) => {
-        console.warn("[lyra] No se pudo escuchar el estado de la base de datos", error);
+        console.warn("[ioun] No se pudo escuchar el estado de la base de datos", error);
       });
 
     void onWatcherInitFailed((message) => {
@@ -484,7 +484,7 @@
         else unlistenWatcher = fn;
       })
       .catch((error: unknown) => {
-        console.warn("[lyra] No se pudo escuchar el estado del watcher", error);
+        console.warn("[ioun] No se pudo escuchar el estado del watcher", error);
       });
 
     // `getCurrentWindow()` lanza de forma síncrona fuera de Tauri (modo web):
@@ -506,10 +506,10 @@
           else unlistenClose = fn;
         })
         .catch((error: unknown) => {
-          console.warn("[lyra] No se pudo interceptar el cierre de la ventana", error);
+          console.warn("[ioun] No se pudo interceptar el cierre de la ventana", error);
         });
     } catch (error) {
-      console.warn("[lyra] No se pudo interceptar el cierre de la ventana", error);
+      console.warn("[ioun] No se pudo interceptar el cierre de la ventana", error);
     }
 
     void onFullscreenChange((fullscreen) => {
@@ -534,7 +534,7 @@
         else unlistenSync = fn;
       })
       .catch((error: unknown) => {
-        console.warn("[lyra] No se pudo escuchar el progreso del sync", error);
+        console.warn("[ioun] No se pudo escuchar el progreso del sync", error);
       });
     void onSyncPaused((paused) => {
       applySyncPaused(paused);
@@ -544,12 +544,12 @@
         else unlistenSyncPaused = fn;
       })
       .catch((error: unknown) => {
-        console.warn("[lyra] No se pudo escuchar el estado pausado del sync", error);
+        console.warn("[ioun] No se pudo escuchar el estado pausado del sync", error);
       });
     void isSyncPaused()
       .then(applySyncPaused)
       .catch((error: unknown) => {
-        console.warn("[lyra] No se pudo consultar el estado pausado del sync", error);
+        console.warn("[ioun] No se pudo consultar el estado pausado del sync", error);
       });
 
     void onLibraryChanged(() => {
@@ -589,7 +589,7 @@
             await importExternalFiles(pendingExternal);
           }
         } catch (error) {
-          console.warn("[lyra] No se pudo configurar la apertura de archivos externos", error);
+          console.warn("[ioun] No se pudo configurar la apertura de archivos externos", error);
         }
 
         unlisten = await onFileDrop(async ({ paths }) => {

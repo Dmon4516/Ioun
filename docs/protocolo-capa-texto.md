@@ -38,7 +38,7 @@ escala.
 | Parámetro | Valor |
 |---|---|
 | `pdf=<url>` | PDF servido por HTTP. Sirve en navegador; en la app requiere el archivo en `public/`. |
-| `local=<ruta>` | Ruta absoluta del disco, cargada con el cargador de la app (protocolo `lyra-pdf`). Solo dentro de la app. |
+| `local=<ruta>` | Ruta absoluta del disco, cargada con el cargador de la app (protocolo `ioun-pdf`). Solo dentro de la app. |
 | `page=<n>` | Página a medir (1 por defecto). |
 | `scale=<n>` | Escala (1.5 por defecto). |
 

@@ -13,7 +13,7 @@
   de las páginas) y las miniaturas la comparten, así que ninguna espera a abrir una
   página.
 - `rangeTransport.ts` sirve el PDF **por rangos**. pdf.js solo añade la cabecera
-  `Range` cuando la URL es `http(s)`, así que con el esquema propio `lyra-pdf://`
+  `Range` cuando la URL es `http(s)`, así que con el esquema propio `ioun-pdf://`
   pedía el archivo entero. Es una **fábrica** (`createRangeTransport`), no una
   clase: la clase base de pdf.js se le pasa ya cargada porque pdf.js exige
   `instanceof` de su propia clase, y heredar de una importación estática

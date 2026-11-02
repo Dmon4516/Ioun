@@ -1,4 +1,4 @@
-/* Tipos compartidos de Reign */
+/* Tipos compartidos de Ioun */
 
 export type ThemeMode = "light" | "dark" | "system";
 export type SurfaceStyle = "frosted" | "opaque";

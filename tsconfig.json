@@ -12,11 +12,11 @@
     "verbatimModuleSyntax": true,
     "types": ["vite/client", "node"],
     "paths": {
-      "$lib/*": ["./src/lib/*"],
-      "$components/*": ["./src/components/*"],
-      "$styles/*": ["./src/styles/*"]
+      "$lib/*": ["../Ioun/src/lib/*"],
+      "$components/*": ["../Ioun/src/components/*"],
+      "$styles/*": ["../Ioun/src/styles/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.svelte", "vite.config.ts", "vitest.config.ts", "playwright.config.ts", "e2e/**/*.ts"],
-  "exclude": ["node_modules", "src-tauri"]
+  "include": ["../Ioun/src/**/*.ts", "../Ioun/src/**/*.svelte", "../Ioun/vite.config.ts", "../Ioun/vitest.config.ts", "../Ioun/playwright.config.ts", "../Ioun/e2e/**/*.ts"],
+  "exclude": ["../Ioun/node_modules", "../Ioun/src-tauri"]
 }

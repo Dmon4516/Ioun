@@ -6,7 +6,7 @@ import { readPdfRange } from "$lib/tauri/commands";
  *
  * pdf.js solo añade la cabecera `Range` cuando la URL es `http(s)`
  * (`isHttp` en su `NetworkManager`), así que con el esquema propio
- * `lyra-pdf://` pedía siempre el archivo completo: un PDF de 300 MB se
+ * `ioun-pdf://` pedía siempre el archivo completo: un PDF de 300 MB se
  * materializaba entero en Rust y en el webview. Con este transporte pdf.js pide
  * solo los bloques que necesita (`requestDataRange`) y cada bloque se lee del
  * disco por IPC.
