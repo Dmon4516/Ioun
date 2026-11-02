@@ -29,6 +29,55 @@ la posición de lectura en el equipo del usuario.
 - Interfaz adaptable con modo oscuro, barra de título integrada en macOS y
   controles de lectura configurables.
 
+## Plan de desarrollo
+
+Estados:
+
+- `[x]` Completado
+- `[~]` En progreso
+- `[ ]` Planificado
+- `[-]` Pospuesto o descartado
+
+### Base y calidad
+
+- `[x]` Separar la interfaz Svelte y el backend Rust mediante comandos y eventos IPC.
+- `[x]` Persistir biblioteca, preferencias, categorías y migraciones en SQLite.
+- `[x]` Añadir pruebas unitarias de frontend y backend.
+- `[~]` Ampliar la cobertura E2E de los flujos principales.
+- `[ ]` Configurar releases automatizadas para macOS, Windows y Linux.
+- `[ ]` Publicar notas de versión y una guía de contribución.
+
+### Biblioteca y sincronización
+
+- `[x]` Sincronizar carpetas locales y detectar cambios del sistema de archivos.
+- `[x]` Mantener la identidad de un documento al moverlo dentro de una carpeta sincronizada.
+- `[ ]` Añadir deduplicación por contenido para movimientos entre volúmenes.
+- `[ ]` Mejorar la resolución de conflictos cuando un archivo cambia mientras está abierto.
+- `[ ]` Añadir filtros, ordenación y búsqueda avanzada en la biblioteca.
+
+### Visor y formatos
+
+- `[x]` Ofrecer navegación, zoom, miniaturas, índice, marcadores, comentarios y búsqueda.
+- `[x]` Restaurar la última página, zoom y estado de vista por documento.
+- `[~]` Consolidar el soporte de módulos Markdown, Typst y EPUB.
+- `[ ]` Mejorar la capa de texto, selección y accesibilidad.
+- `[ ]` Añadir anotaciones editables y exportación de anotaciones.
+
+### Experiencia de usuario
+
+- `[x]` Añadir tema oscuro y preferencias de layout.
+- `[~]` Refinar estados de carga, sincronización, errores y documentos ausentes.
+- `[ ]` Añadir atajos de teclado configurables.
+- `[ ]` Añadir localización completa de la interfaz.
+- `[ ]` Revisar accesibilidad con teclado, lectores de pantalla y contraste.
+
+### Distribución y privacidad
+
+- `[x]` Mantener los documentos locales y usar el almacenamiento del sistema.
+- `[ ]` Firmar y notarizar los instaladores de producción.
+- `[ ]` Documentar permisos, almacenamiento local y ciclo de vida de los datos.
+- `[ ]` Preparar un canal estable de actualizaciones.
+
 ## Arquitectura
 
 ```text
