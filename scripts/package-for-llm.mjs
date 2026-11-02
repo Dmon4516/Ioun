@@ -34,9 +34,7 @@ const EXCLUDED_FILES = [
   ".DS_Store",
   ".env",
   ".env.local",
-  "app-source.txt", // volcado generado: se regenera con `npm run export:source`
 ];
-const EXCLUDED_PATTERNS = [/^app-source-part\d+\.txt$/];
 
 /**
  * Salida ya existente: se exige borrarla a mano para no pisar un ZIP que el
@@ -56,7 +54,6 @@ const entries = [];
 for (const entry of await readdir(projectRoot, { withFileTypes: true })) {
   const name = entry.name;
   if (EXCLUDED_DIRS.includes(name) || EXCLUDED_FILES.includes(name)) continue;
-  if (EXCLUDED_PATTERNS.some((pattern) => pattern.test(name))) continue;
   entries.push(name);
 }
 

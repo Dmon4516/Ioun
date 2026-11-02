@@ -10,10 +10,4 @@ src-tauri/gen/
 .vscode/
 .idea/
 coverage/
-app-source.txt
-app-source-part*.txt
-frontend-source.txt
-frontend-source-part*.txt
-backend-source.txt
-backend-source-part*.txt
 vitest.config.ts.timestamp-*.mjs

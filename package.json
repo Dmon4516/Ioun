@@ -21,9 +21,6 @@
     "validate": "npm run typecheck && npm run check && npm run lint && npm test && npm run build",
     "format": "prettier --write .",
     "package:llm": "node scripts/package-for-llm.mjs",
-    "export:source": "node scripts/export-app-source.mjs --split",
-    "export:frontend": "node scripts/export-app-source.mjs --scope=frontend --split",
-    "export:backend": "node scripts/export-app-source.mjs --scope=backend --split",
     "test:e2e": "playwright test"
   },
   "dependencies": {
