@@ -7,7 +7,7 @@ export async function confirmDialog(
 ): Promise<boolean> {
   if (!isTauri()) return window.confirm(message);
   return tauriConfirm(message, {
-    title: options.title ?? "Lyra",
+    title: options.title ?? "Reign",
     kind: options.kind ?? "warning",
   });
 }
@@ -21,7 +21,7 @@ export async function alertDialog(
     return;
   }
   await tauriMessage(message, {
-    title: options.title ?? "Lyra",
+    title: options.title ?? "Reign",
     kind: options.kind ?? "info",
   });
 }

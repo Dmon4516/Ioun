@@ -1,4 +1,4 @@
-/* Tipos compartidos de Lyra Viewer */
+/* Tipos compartidos de Reign */
 
 export type ThemeMode = "light" | "dark" | "system";
 export type SurfaceStyle = "frosted" | "opaque";

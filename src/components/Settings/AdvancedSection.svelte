@@ -307,8 +307,8 @@
       <div class="sub-title">Carpetas</div>
       <div class="row">
         <div>
-          <div class="label">Quitar contenido de Lyra al eliminar una carpeta</div>
-          <div class="desc">Elimina de Lyra los documentos de la carpeta y sus subcarpetas, pero conserva los PDF en el disco.</div>
+          <div class="label">Quitar contenido de Reign al eliminar una carpeta</div>
+          <div class="desc">Elimina de Reign los documentos de la carpeta y sus subcarpetas, pero conserva los PDF en el disco.</div>
         </div>
         <button
           class="switch"
@@ -390,7 +390,7 @@
       <div class="row">
         <div>
           <div class="label">Flush al cerrar la ventana</div>
-          <div class="desc">Si se activa, Lyra espera a guardar ajustes y progreso antes de cerrar. Si se desactiva, un cierre rápido puede perder el último cambio.</div>
+          <div class="desc">Si se activa, Reign espera a guardar ajustes y progreso antes de cerrar. Si se desactiva, un cierre rápido puede perder el último cambio.</div>
         </div>
         <button
           class="switch"

@@ -1,4 +1,4 @@
-//! Generación centralizada de IDs para Lyra.
+//! Generación centralizada de IDs para Reign.
 //!
 //! Formato: `{prefix}-{32 hex chars}` (UUID v4 sin guiones).
 //!

@@ -116,8 +116,8 @@
 
   async function handleDelete() {
     const message = settings.deleteFolderContents
-      ? `¿Eliminar "${folder.name}" y quitar sus documentos de Lyra? Los PDF se conservarán en el disco.`
-      : `¿Eliminar la carpeta "${folder.name}"? Sus subcarpetas desaparecerán de Lyra y sus documentos pasarán a la raíz de Archivos.`;
+      ? `¿Eliminar "${folder.name}" y quitar sus documentos de Reign? Los PDF se conservarán en el disco.`
+      : `¿Eliminar la carpeta "${folder.name}"? Sus subcarpetas desaparecerán de Reign y sus documentos pasarán a la raíz de Archivos.`;
     if (!(await confirmDialog(message))) return;
     try {
       const removedDocumentIds = await deleteFolder(folder.id, settings.deleteFolderContents);

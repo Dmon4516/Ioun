@@ -1,7 +1,7 @@
 {
-  "name": "lyra-viewer",
+  "name": "reign",
   "version": "0.1.0",
-  "description": "Lyra Viewer \u2014 PDF reader built with Svelte 5, Tauri 2 and pdf.js",
+  "description": "Reign \u2014 document reader built with Svelte 5, Tauri 2 and pdf.js",
   "type": "module",
   "license": "MIT",
   "scripts": {
@@ -20,6 +20,9 @@
     "typecheck": "tsc --noEmit",
     "validate": "npm run typecheck && npm run check && npm run lint && npm test && npm run build",
     "format": "prettier --write .",
+    "export:source": "node scripts/export-app-source.mjs --split",
+    "export:frontend": "node scripts/export-app-source.mjs --scope=frontend --split",
+    "export:backend": "node scripts/export-app-source.mjs --scope=backend --split",
     "test:e2e": "playwright test"
   },
   "dependencies": {

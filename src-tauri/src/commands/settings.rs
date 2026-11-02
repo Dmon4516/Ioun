@@ -1,7 +1,7 @@
 use tauri::AppHandle;
 use tauri_plugin_store::StoreExt;
 
-// This module defines the commands related to application settings in the Lyra Viewer application.
+// This module defines the commands related to application settings in Reign.
 // The `load_settings` command retrieves the settings from the store, while the `save_settings` command saves the provided settings to the store.
 const STORE_FILE: &str = "settings.json";
 // The `SETTINGS_KEY` constant is used as the key for storing and retrieving settings in the store.

@@ -95,7 +95,7 @@
             "Carpeta vinculada. La sincronización sigue pausada; pulsa «Reanudar» cuando quieras.",
           );
         } else {
-          showToast("Carpeta vinculada; se sincroniza mientras Lyra esté abierto.");
+          showToast("Carpeta vinculada; se sincroniza mientras Reign esté abierto.");
           void syncSyncedFolders();
         }
         return;

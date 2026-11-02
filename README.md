@@ -1,9 +1,9 @@
-# Lyra Viewer
+# Reign
 
-![Lyra Viewer: estado inicial](docs/screenshots/frontend-empty-state.png)
+![Reign: estado inicial](docs/screenshots/frontend-empty-state.png)
 
 Lector de documentos de escritorio ligero y privado, construido con **Svelte 5**,
-**Tauri 2**, **Rust**, **SQLite** y **pdf.js**. Lyra organiza documentos locales
+**Tauri 2**, **Rust**, **SQLite** y **pdf.js**. Reign organiza documentos locales
 sin subirlos a un servicio externo y mantiene la biblioteca, las preferencias y
 la posición de lectura en el equipo del usuario.
 
@@ -24,7 +24,7 @@ la posición de lectura en el equipo del usuario.
 - Detección de movimientos externos mediante identidad de archivo
   (`device_id` + `inode`) para evitar duplicados al mover documentos.
 - Organización por categorías, documentos recientes y posiciones persistentes.
-- Eliminación opcional del contenido desde Lyra conservando el archivo original
+- Eliminación opcional del contenido desde Reign conservando el archivo original
   según la acción elegida.
 - Interfaz adaptable con modo oscuro, barra de título integrada en macOS y
   controles de lectura configurables.
